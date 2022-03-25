@@ -1,0 +1,27 @@
+{{!-- formulario para eliminar --}}
+
+
+    <div class="container mt-6">
+    <div class="columns">
+        <div class="column">
+            <h1>TODO DELETE</h1>
+            <div class="card mt-6">
+                <div class="card-content">
+                    <div class="content">
+                        <table class="table">
+                            <form action="/todos/{{this.id}}" >
+                                <div class="container">
+                                    <div class="row">
+                                        <p class="m-2">Confirm delete Todo id {{this.id}} </p>
+                                    </div>
+                                    <button type="submit" class=" m-2 btn btn-primary">DELETE</button>
+                                </div>
+
+                            </form>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
