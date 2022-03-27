@@ -45,13 +45,13 @@ app.get("/todos", async (req,res) => {
 app.post("/todos", async(req,res) => {
     const {name,description} = req.body
     const crear = await createTodos(name,description)
-    res.render("creado")
+    res.render("creado", {name, description})
 })
 // DELETE
 app.get("/todos/:id", async (req,res) => {
     const {id} = req.params
     const eliminar = await deleteTodos(id)
-    res.render("eliminado")
+    res.render("eliminado" , {id})
 })
 
 

@@ -1,5 +1,3 @@
-
-
 require('dotenv').config()
 
 const { Client } = require('pg')
@@ -8,7 +6,7 @@ const getTodos = async () => {
     const client = new Client()
     await client.connect()
     try{
-        const res = await client.query('SELECT * from todos')
+        const res = await client.query('SELECT * from tablass')
         return res.rows
     }catch(error){
         console.log("error en DB :" + error)
@@ -24,7 +22,7 @@ const createTodos = async (name,description) => {
     const client = new Client()
     await client.connect()
     const query = { 
-        text: "INSERT INTO todos (nombre, descripcion, fechacreacion) VALUES($1,$2,now()) RETURNING*;",
+        text: "INSERT INTO tablass (nombre, descripcion, fechacreacion) VALUES($1,$2,now()) RETURNING*;",
         values:[name,description]
     }
     try{
@@ -43,7 +41,7 @@ const deleteTodos = async (id) => {
     const client = new Client()
     await client.connect()
     const query = { 
-        text: "DELETE from todos WHERE id = $1 RETURNING*;",
+        text: "DELETE from tablass WHERE id = $1 RETURNING*;",
         values:[id]
     }
     try{

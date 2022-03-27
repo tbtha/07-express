@@ -5,7 +5,7 @@
 Creacion de base de datos 
 
 ```sql
-CREATE DATABASE todo_db;
+CREATE DATABASE tablas_db;
 ```
 
 Descargar modulos de node
@@ -14,66 +14,23 @@ Descargar modulos de node
 npm i
 ```
 
-Crear archivo .env
+Modificar archivo .env 
 
 ```
 PGUSER=postgres
 PGHOST=localhost
 PGPASSWORD=
-PGDATABASE=todo_db
-PGPORT=5432
+PGDATABASE=tablas_db
+PGPORT=
 ```
 
-Inicializar
+Creacion de tabla e inicializar 
 
 ```
 npm run migrate:db 
 npm run start
 ```
-
-Crear archivo 
-```
-Dockerfile
-```
-
-### Configuracion de archivo Dockerfile
-
-Version de node 
-
-```
-FROM node:17-alpine3.14
-```
-
-Directorio en el que trabajaremos
-
-```
-WORKDIR /usr/src/app
-```
-
-Instalacion y ejecucion de dependencias
-
-```
-COPY package\*.json ./
-RUN npm install
-```
-
-Copiamos archivos correspondientes del proyecto
-
-```
-COPY . .
-```
-
-EXPONEMOS EN UN PUERTO *
-
-```
-EXPOSE 4000
-```
-
-COMANDO DE EJECUCION
-
-```
-CMD [ "node", "index.js"]
-```
+ 
 
 Reemplazamos en archivo .env 
 
@@ -81,7 +38,7 @@ Reemplazamos en archivo .env
 HOST=host.docker.internal
 ```
 
-### Ejecutar en terminal 
+### Ejecutar en terminal para levantar el proyecto en docker
 
 Creacion de contenedor por linea de comando 
 
