@@ -1,6 +1,8 @@
-<!-- ``` -->
+<!-- DESAFIO REALIZADO POR TABATHA GAMBOA Y NICOLE GAMBOA  -->
 
 # Instrucciones para levantar el proyecto en Docker
+
+
 
 Creacion de base de datos 
 
